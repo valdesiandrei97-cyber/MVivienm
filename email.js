@@ -1,14 +1,14 @@
 emailjs.init({
-    publicKey: xeTPCgSK8mgwHugHW
+    publicKey: "xeTPCgSK8mgwHugHW"
 });
 
 function sendReservation(date){
 
     return emailjs.send(
 
-        service_7gdn8hj,
+        "service_7gdn8hj",
 
-        template_mllp0o3,
+        "template_mllp0o3",
 
         {
 
