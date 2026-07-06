@@ -142,15 +142,15 @@ saveBtn.addEventListener("click", async () => {
 
         showScreen("success");
 
-    }catch(error){
+  }catch(error){
 
-        alert("Couldn't send the reservation.");
+    console.log(error);
+    console.log("Status:", error.status);
+    console.log("Text:", error.text);
 
-        console.error(error);
+    alert(error.text || "Couldn't send the reservation.");
 
-        saveBtn.disabled = false;
-        saveBtn.textContent = "Save my evening";
+    saveBtn.disabled = false;
+    saveBtn.textContent = "Save my evening";
 
-    }
-
-});
+}
