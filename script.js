@@ -131,12 +131,26 @@ dateButtons.forEach(button => {
    FINAL
 ========================== */
 
-saveBtn.addEventListener("click", () => {
+saveBtn.addEventListener("click", async () => {
 
-    showScreen("success");
+    saveBtn.disabled = true;
+    saveBtn.textContent = "Sending...";
 
-    // Aici vom adăuga EmailJS mai târziu.
+    try{
 
-    console.log("Selected date:", chosenDate);
+        await sendReservation(chosenDate);
+
+        showScreen("success");
+
+    }catch(error){
+
+        alert("Couldn't send the reservation.");
+
+        console.error(error);
+
+        saveBtn.disabled = false;
+        saveBtn.textContent = "Save my evening";
+
+    }
 
 });
